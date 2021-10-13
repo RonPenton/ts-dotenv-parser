@@ -1,35 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="15" failures="0" errors="0" time="4.458">
-  <testsuite name="dotenv:" errors="0" failures="0" skipped="0" timestamp="2021-10-13T15:03:48" time="4.1" tests="15">
-    <testcase classname="dotenv: parses" name="dotenv: parses" time="0.002">
+<testsuites name="jest tests" tests="17" failures="0" errors="0" time="3.705">
+  <testsuite name="dotenv:" errors="0" failures="0" skipped="0" timestamp="2021-10-13T15:25:19" time="3.366" tests="17">
+    <testcase classname="dotenv: parses" name="dotenv: parses" time="0.004">
     </testcase>
-    <testcase classname="dotenv: catches required vars" name="dotenv: catches required vars" time="0.019">
+    <testcase classname="dotenv: catches required vars" name="dotenv: catches required vars" time="0.02">
     </testcase>
     <testcase classname="dotenv: parses numbers" name="dotenv: parses numbers" time="0.001">
     </testcase>
     <testcase classname="dotenv: throws on NaN" name="dotenv: throws on NaN" time="0.001">
     </testcase>
-    <testcase classname="dotenv: throws on number above and below min" name="dotenv: throws on number above and below min" time="0.001">
+    <testcase classname="dotenv: throws on number above and below min" name="dotenv: throws on number above and below min" time="0.002">
     </testcase>
-    <testcase classname="dotenv: numbers have default." name="dotenv: numbers have default." time="0">
+    <testcase classname="dotenv: numbers have default." name="dotenv: numbers have default." time="0.001">
     </testcase>
-    <testcase classname="dotenv: parses booleans" name="dotenv: parses booleans" time="0.001">
+    <testcase classname="dotenv: parses booleans" name="dotenv: parses booleans" time="0.002">
     </testcase>
-    <testcase classname="dotenv: throws on not a boolean" name="dotenv: throws on not a boolean" time="0">
+    <testcase classname="dotenv: throws on not a boolean" name="dotenv: throws on not a boolean" time="0.002">
     </testcase>
-    <testcase classname="dotenv: enumerations" name="dotenv: enumerations" time="0">
+    <testcase classname="dotenv: enumerations" name="dotenv: enumerations" time="0.001">
     </testcase>
-    <testcase classname="dotenv: enumerations throw" name="dotenv: enumerations throw" time="0">
+    <testcase classname="dotenv: enumerations throw" name="dotenv: enumerations throw" time="0.001">
     </testcase>
-    <testcase classname="dotenv: enumerations default" name="dotenv: enumerations default" time="0">
+    <testcase classname="dotenv: enumerations default" name="dotenv: enumerations default" time="0.001">
     </testcase>
-    <testcase classname="dotenv: string array" name="dotenv: string array" time="0.001">
+    <testcase classname="dotenv: string array" name="dotenv: string array" time="0.002">
     </testcase>
-    <testcase classname="dotenv: fail string array, not all strings" name="dotenv: fail string array, not all strings" time="0">
+    <testcase classname="dotenv: fail string array, not all strings" name="dotenv: fail string array, not all strings" time="0.001">
     </testcase>
-    <testcase classname="dotenv: fail string array, not even array" name="dotenv: fail string array, not even array" time="0.002">
+    <testcase classname="dotenv: fail string array, not even array" name="dotenv: fail string array, not even array" time="0.001">
     </testcase>
     <testcase classname="dotenv: json" name="dotenv: json" time="0.001">
+    </testcase>
+    <testcase classname="dotenv: required" name="dotenv: required" time="0.001">
+    </testcase>
+    <testcase classname="dotenv: string" name="dotenv: string" time="0.001">
     </testcase>
   </testsuite>
 </testsuites>

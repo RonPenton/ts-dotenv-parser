@@ -45,7 +45,7 @@ export function parseDotEnv<C extends DotEnvOptions>(configuration: C): DotEnv<C
             }
 
         } else {
-            if ('default' in config) {
+            if ('default' in config && config.default !== undefined) {
                 result[variable] = config.default;
             } else {
                 errors.push(`Environment variable {${variable}} is missing`);
@@ -59,6 +59,14 @@ export function parseDotEnv<C extends DotEnvOptions>(configuration: C): DotEnv<C
 
     return result;
 }
+
+const isString = (opts?: WithoutParser<string>): WithParser<string> => {
+    return {
+        parser: val => val,
+        default: opts?.default
+    };
+}
+
 
 const isNumber = (opts?: WithoutParser<number> & { min?: number, max?: number }): WithParser<number> => {
 
@@ -139,11 +147,11 @@ const isArray = <T>(checker: Checker<T>, opts?: WithoutParser<T[]>): WithParser<
     };
 }
 
-const isString = (obj: any): obj is string => {
+const isStr = (obj: any): obj is string => {
     return typeof obj === 'string';
 }
 const isStringArray = (opts?: WithoutParser<string[]>): WithParser<string[]> => {
-    return isArray(isString, opts);
+    return isArray(isStr, opts);
 }
 
 export const Env = {
@@ -152,5 +160,6 @@ export const Env = {
     enum: isEnum,
     json: isJson,
     array: isArray,
-    stringArray: isStringArray
+    stringArray: isStringArray,
+    string: isString
 };

@@ -199,4 +199,17 @@ describe('dotenv:', () => {
         expect(test).toThrow();
     });
 
+    test('required', () => {
+        const test = () => parseDotEnv({ A: Env.string() });
+
+        expect(test).toThrow();
+    });
+
+    test('string', () => {
+        process.env['A'] = 'foobar';
+        const env = parseDotEnv({ A: Env.string() });
+
+        expect(env.A).toBe('foobar');
+    });
+
 });
