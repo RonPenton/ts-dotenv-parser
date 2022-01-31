@@ -212,4 +212,22 @@ describe('dotenv:', () => {
         expect(env.A).toBe('foobar');
     });
 
+
+    test('nullable', () => {
+        process.env['A'] = 'foobar';
+        process.env['C'] = '42';
+
+        const env = parseDotEnv({
+            A: Env.nullable(Env.string()),
+            B: Env.nullable(Env.string()),
+            C: Env.nullable(Env.number()),
+            D: Env.nullable(Env.number()),
+        });
+
+        expect(env.A).toBe('foobar');
+        expect(env.B).toBe(null);
+        expect(env.C).toBe(42);
+        expect(env.D).toBe(null);
+    });
+
 });

@@ -60,6 +60,21 @@ export function parseDotEnv<C extends DotEnvOptions>(configuration: C): DotEnv<C
     return result;
 }
 
+const nullable = <T>(inner: WithParser<T>) => {
+
+    const parser = (val: string | null | undefined) => {
+        if(val === null || val === undefined) {
+            return null;
+        }
+        return inner.parser(val);
+    }
+
+    return {
+        parser, 
+        default: null
+    };
+}
+
 const isString = (opts?: WithoutParser<string>): WithParser<string> => {
     return {
         parser: val => val,
@@ -161,5 +176,6 @@ export const Env = {
     json: isJson,
     array: isArray,
     stringArray: isStringArray,
-    string: isString
+    string: isString,
+    nullable
 };
